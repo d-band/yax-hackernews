@@ -26,7 +26,7 @@ const store = yax({
   modules: { item, user },
 }, router(history));
 
-store.onRoute('/:type/:page?', handlers.list);
+store.onRoute('/:type(top|new|show|ask|job)/:page?', handlers.list);
 store.onRoute('/item/:itemId', handlers.item);
 store.onRoute('/user/:userId', handlers.user);
 
