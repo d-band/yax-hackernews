@@ -3,7 +3,7 @@
 HackerNews clone built with [Yax](https://github.com/d-band/yax), based on [dva-hackernews](https://github.com/dvajs/dva-hackernews).
 
 <p align="center">
-  <a href="https://yax-hackernews-vhxudjypte.now.sh">
+  <a href="https://yax-hn.now.sh">
     <img src="/public/screenshot.png" width="700" />
     <br />
     Live Demo
