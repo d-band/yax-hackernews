@@ -12,7 +12,7 @@ const MainRouter = ({ history }) => (
   <Router history={history}>
     <Switch>
       <Route exact path="/" render={() => (<Redirect to="/top" />)} />
-      {TYPES.map(type => <Route path={`/${type}/:page?`} component={ListPage} />)}
+      {TYPES.map(type => <Route key={`/${type}/:page?`} path={`/${type}/:page?`} component={ListPage} />)}
       <Route path="/item/:itemId" component={ItemPage} />
       <Route path="/user/:userId" component={UserPage} />
     </Switch>

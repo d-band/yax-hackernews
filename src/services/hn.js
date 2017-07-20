@@ -15,7 +15,7 @@ function fetch(child) {
   return new Promise((resolve, reject) => {
     api.child(child).once('value', (snapshot) => {
       const val = snapshot.val();
-        // mark the timestamp when this item is cached
+      // mark the timestamp when this item is cached
       if (val) val.__lastUpdated = Date.now();
       if (cache) cache.set(child, val);
       resolve(val);

@@ -1,8 +1,5 @@
 {
   "private": true,
-  "entry": {
-    "index": "./src/index.js"
-  },
   "dependencies": {
     "firebase": "^4.1.0",
     "history": "^4.6.1",
@@ -12,7 +9,7 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "react-transition-group": "^1.1.3",
+    "react-transition-group": "^2.1.0",
     "yax": "^0.3.1",
     "yax-router": "0.0.1"
   },
@@ -20,11 +17,11 @@
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "copy": "^0.3.0",
-    "dool": "^2.1.0",
-    "eslint": "^3.19.0",
+    "dool": "^3.0.1",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.0.1"
   },
   "scripts": {

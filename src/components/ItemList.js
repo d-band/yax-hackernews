@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import './ItemList.less';
 import Spinner from './Spinner';
@@ -11,30 +11,33 @@ const ItemList = ({ loading, items, page, maxPage, activeType, location }) => (
     <Spinner loading={loading} />
     <div className="news-list-nav">
       {page > 1
-          ? <Link to={`/${activeType}/${page - 1}`}>&lt; prev</Link>
-          : <a className="disabled">&lt; prev</a>}
+        ? <Link to={`/${activeType}/${page - 1}`}>&lt; prev</Link>
+        : <a className="disabled">&lt; prev</a>}
       <span>{`${page}/${maxPage}`}</span>
       {page < maxPage
-          ? <Link to={`/${activeType}/${page + 1}`}>more &gt;</Link>
-          : <a className="disabled">more &gt;</a>}
+        ? <Link to={`/${activeType}/${page + 1}`}>more &gt;</Link>
+        : <a className="disabled">more &gt;</a>}
     </div>
-    <CSSTransitionGroup
-      transitionName="list"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={500}
+    <CSSTransition
+      classNames="list"
+      timeout={{ enter: 500, exit: 500 }}
     >
       <div key={location.pathname} className="news-list">
-        <CSSTransitionGroup
-          transitionName="item"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
+        <TransitionGroup>
           {
-              items.map(item => <Item key={item.id} item={item} />)
-            }
-        </CSSTransitionGroup>
+            items.map(item => (
+              <CSSTransition
+                key={item.id}
+                classNames="item"
+                timeout={{ enter: 500, exit: 500 }}
+              >
+                <Item item={item} />
+              </CSSTransition>
+            ))
+          }
+        </TransitionGroup>
       </div>
-    </CSSTransitionGroup>
+    </CSSTransition>
   </div>
 );
 ItemList.propTypes = {
