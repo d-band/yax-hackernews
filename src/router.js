@@ -23,4 +23,3 @@ MainRouter.propTypes = {
 };
 
 export default MainRouter;
-

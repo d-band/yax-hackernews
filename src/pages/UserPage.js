@@ -21,9 +21,7 @@ function UserPage({ loading, user }) {
             <span className="label">Karma: </span>
             <span>{user.karma}</span>
           </li>
-          { user.about ?
-            <li className="about" dangerouslySetInnerHTML={{ __html: user.about }} />
-            : null }
+          { user.about ? <li className="about" dangerouslySetInnerHTML={{ __html: user.about }} /> : null }
         </ul>
         <p className="links">
           <a href={`https://news.ycombinator.com/submitted?id=${user.id}`} rel="noopener noreferrer" target="_blank">submissions</a>

@@ -18,7 +18,8 @@ export function timeAgo(time) {
   const between = (Date.now() / 1000) - Number(time);
   if (between < 3600) {
     return pluralize(floor(between / 60), ' minute');
-  } else if (between < 86400) {
+  }
+  if (between < 86400) {
     return pluralize(floor(between / 3600), ' hour');
   }
 

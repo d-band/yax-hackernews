@@ -6,7 +6,9 @@ import { listSelector } from '../models/item/selectors';
 import ItemList from '../components/ItemList';
 import Layout from '../components/Layout';
 
-function ListPage({ loading, items, page, maxPage, activeType, location }) {
+function ListPage({
+  loading, items, page, maxPage, activeType, location
+}) {
   return (
     <Layout>
       <ItemList

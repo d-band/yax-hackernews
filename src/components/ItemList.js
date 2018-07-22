@@ -6,7 +6,9 @@ import './ItemList.less';
 import Spinner from './Spinner';
 import Item from './Item';
 
-const ItemList = ({ loading, items, page, maxPage, activeType, location }) => (
+const ItemList = ({
+  loading, items, page, maxPage, activeType, location
+}) => (
   <div className="news-view">
     <Spinner loading={loading} />
     <div className="news-list-nav">

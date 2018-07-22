@@ -13,6 +13,7 @@ class Comment extends Component {
     id: PropTypes.number.isRequired,
     itemsById: PropTypes.any.isRequired
   };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,9 +23,9 @@ class Comment extends Component {
 
   handleExpand = (e) => {
     e.preventDefault();
-    this.setState({
-      open: !this.state.open
-    });
+    this.setState(prev => ({
+      open: !prev.open
+    }));
   }
 
   render() {
@@ -38,17 +39,20 @@ class Comment extends Component {
         <div className="by">
           <Link to={`/user/${comment.by}`}>{comment.by}</Link>
           <span>{` ${timeAgo(comment.time)} ago`}</span>
-          {comment.kids
-            ? (<span> | <a href="" className="expand" onClick={this.handleExpand}>
-              {`${open ? 'collapse' : 'expand'} ${pluralize(comment.kids.length)}`}
-            </a></span>)
-            : null}
+          {comment.kids ? (
+            <span>
+              |
+              <a href="#" className="expand" onClick={this.handleExpand}>
+                {`${open ? 'collapse' : 'expand'} ${pluralize(comment.kids.length)}`}
+              </a>
+            </span>
+          ) : null}
         </div>
         <div className="text" dangerouslySetInnerHTML={{ __html: comment.text }} />
         <div className="comment-children">
-          {comment.kids && open
-            ? comment.kids.map(kid => <Comment key={kid} id={kid} itemsById={itemsById} />)
-            : null}
+          {comment.kids && open ? (
+            comment.kids.map(kid => <Comment key={kid} id={kid} itemsById={itemsById} />)
+          ) : null}
         </div>
       </div>
     );

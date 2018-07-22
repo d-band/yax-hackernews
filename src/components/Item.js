@@ -20,9 +20,12 @@ const Item = ({ item }) => {
     <div className="news-item">
       <span className="score">{score}</span>
       <span className="title">
-        {url
-          ? <span><a href={url} rel="noopener noreferrer" target="_blank">{title}</a><span className="host"> ({host(url)})</span></span>
-          : <Link to={`/item/${id}`}>{title}</Link>}
+        {url ? (
+          <span>
+            <a href={url} rel="noopener noreferrer" target="_blank">{title}</a>
+            <span className="host"> ({host(url)})</span>
+          </span>
+        ) : <Link to={`/item/${id}`}>{title}</Link>}
       </span>
       <br />
       <span className="meta">
@@ -30,16 +33,14 @@ const Item = ({ item }) => {
           ? <span className="by">by <Link to={`/user/${by}`}>{by}</Link></span>
           : null}
         <span className="time">{` ${timeAgo(time)}`} ago</span>
-        {type !== 'job'
-          ? <span className="comments-link">
-            <span>{' | '}</span>
+        {type !== 'job' ? (
+          <span className="comments-link">
+            <span> | </span>
             <Link to={`/item/${id}`}>{descendants} comments</Link>
           </span>
-          : null}
+        ) : null}
       </span>
-      {type !== 'story'
-        ? <span className="label">{type}</span>
-        : null}
+      {type !== 'story' ? <span className="label">{type}</span> : null}
     </div>
   );
 };
