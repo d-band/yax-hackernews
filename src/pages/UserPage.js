@@ -44,7 +44,10 @@ function UserPage({ loading, user }) {
 
 UserPage.propTypes = {
   loading: PropTypes.bool.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object
+};
+UserPage.defaultProps = {
+  user: null
 };
 
 function mapStateToProps(state, ownProps) {
