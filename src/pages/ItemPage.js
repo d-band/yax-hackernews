@@ -41,8 +41,11 @@ function ItemPage({ loading, item, itemsById }) {
 
 ItemPage.propTypes = {
   loading: PropTypes.bool.isRequired,
-  item: PropTypes.object.isRequired,
+  item: PropTypes.object,
   itemsById: PropTypes.object.isRequired
+};
+ItemPage.defaultProps = {
+  item: null
 };
 
 function mapStateToProps(state, ownProps) {
