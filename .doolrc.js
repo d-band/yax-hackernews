@@ -2,7 +2,7 @@ module.exports = {
   entry: {
     index: './src/index.js'
   },
-  babelPlugins: ['transform-runtime'],
+  babelPlugins: ['@babel/transform-runtime'],
   devServer: {
     historyApiFallback: {
       rewrites: [{
