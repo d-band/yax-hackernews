@@ -1,18 +1,18 @@
 {
   "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
+    "@babel/runtime": "^7.1.5",
     "firebase": "^5.5.7",
     "history": "^4.6.1",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
     "react-redux": "^5.1.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-transition-group": "^2.5.0",
-    "yax": "^0.3.1",
-    "yax-router": "0.0.1"
+    "yax": "^0.4.0",
+    "yax-router": "0.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
