@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import yax from 'yax';
 import router, { push } from 'yax-router';
 import './index.less';
@@ -10,7 +10,7 @@ import user from './models/user';
 import Router from './router';
 import * as handlers from './handlers';
 
-const history = createHistory();
+const history = createBrowserHistory();
 const store = yax({
   state: {
     loading: false,
